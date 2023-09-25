@@ -15,5 +15,15 @@ function checkLength($str, $min = 1, $max = 100)
 {
     return strlen($str) >= $min && strlen($str) <= $max;
 }
+function checkInput($input)
+{
+    $notAllowedPattern = '/[<>&]/';
+
+    if (preg_match($notAllowedPattern, $input)) {
+        return true;
+    }
+
+    return false;
+}
 
 ?>

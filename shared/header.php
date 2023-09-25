@@ -29,10 +29,10 @@ if (!isset($_SESSION))
                     <ul class="navbar-nav mr-auto">
                         <?php if (isset($_SESSION["userLog"])) { ?>
                             <li class="nav-item">
-                                <a class="nav-link waves-effect" href="/myPosts.php">All Posts</a>
+                                <a class="nav-link waves-effect" href="../../controller/post/myPosts.php">All Posts</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link waves-effect" href="/pages/posts/create.php">Create Post</a>
+                                <a class="nav-link waves-effect" href="../../views/posts/create.php">Create Post</a>
                             </li>
                             <li class="nav-item">
                                 <form action="" method="GET">
@@ -45,24 +45,24 @@ if (!isset($_SESSION))
                     <?php if (!isset($_SESSION["userLog"])) { ?>
                         <ul class="navbar-nav nav-flex-icons">
                             <li class="nav-item">
-                                <a href="/pages/auth/login.php" class="nav-link waves-effect">Login</a>
+                                <a href="/views/auth/login.php" class="nav-link waves-effect">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/pages/auth/register.php" class="nav-link waves-effect">Register</a>
+                                <a href="/views/auth/register.php" class="nav-link waves-effect">Register</a>
                             </li>
                         </ul>
                     <?php } else { ?>
 
                         <ul class="navbar-nav nav-flex-icons">
                             <li class="nav-item">
-                                <a href="../pages/auth/userData.php?id=<?php echo $_SESSION["userLog"]; ?>"
+                                <a href="../../controller/user/userData.php?id=<?php echo $_SESSION["userLog"]; ?>"
                                     class="nav-link waves-effect">
                                     Welcome
                                     <?= $_SESSION["userName"] ?>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <form action="/auth.php" method="post">
+                                <form action="../../controller/user/logout.php" method="post">
                                     <input type="hidden" name="logout" value="logout">
                                     <button type='submit' class="nav-link waves-effect bg-transparent border-0"
                                         style="cursor:pointer;">Logout</button>
